@@ -1,6 +1,6 @@
 function one() {
     $.ajax({
-        url: 'http://127.0.0.1:5000/api',
+        url: 'https://api-practice-wine.vercel.app/api',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ "value": "one" }),
@@ -15,7 +15,7 @@ function one() {
 
 function two() {
     $.ajax({
-        url: 'http://127.0.0.1:5000/api',
+        url: 'https://api-practice-wine.vercel.app/api',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({ "value": "two" }),
@@ -30,7 +30,7 @@ function two() {
 
 function loadHTML() {
     $.ajax({
-        url: 'http://127.0.0.1:5000/body',
+        url: 'https://api-practice-wine.vercel.app/body',
         type: 'GET',
         success: function (response) {
             $('#data').html(response);
