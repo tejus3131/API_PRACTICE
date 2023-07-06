@@ -5,13 +5,7 @@ app = Flask(__name__)
 CORS(app)
 
 page1 = '''
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
     <title>Webpage 2</title>
-</head>
-<body>
     <div class="container">
         <h1>Webpage 2</h1>
         <div class="content">
@@ -22,17 +16,9 @@ page1 = '''
         </div>
         <button type="submit" class="button" onclick="one()">Click Me</button>
     </div>
-</body>
-</html>
 '''
 page2 = '''
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
     <title>Webpage 1</title>
-</head>
-<body>
     <div class="container">
         <h1>Webpage 1</h1>
         <div class="content">
@@ -42,8 +28,6 @@ page2 = '''
         </div>
         <button type="submit" class="button" onclick="two()">Click Me</button>
     </div>
-</body>
-</html>
 '''
 
 body = '''

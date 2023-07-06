@@ -13,6 +13,7 @@ function one() {
     });
 }
 
+
 function two() {
     $.ajax({
         url: 'https://api-practice-wine.vercel.app/api',
@@ -27,6 +28,8 @@ function two() {
         }
     });
 }
+
+
 
 function loadHTML() {
     $.ajax({
