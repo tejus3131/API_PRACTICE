@@ -30,37 +30,23 @@ page2 = '''
     </div>
 '''
 
-body = '''
-<h1>API Page</h1>
-<div id="content"></div>
-'''
-
 
 @app.route('/')
 def index():
     return app.send_static_file('index.html')
 
-
-@app.route('/body')
-def get_body():
-    return body
-
-
-@app.route('/js')
-def javascript():
-    return app.send_static_file('script.js')
-
-
-@app.route('/css')
-def styling():
-    return app.send_static_file('styles.css')
-
 @app.route('/api', methods=["GET"])
 def get_request():
     return redirect('/')
 
-@app.route('/api', methods=['POST'])
+@app.route('/api', methods=['POST', 'OPTIONS'])
 def post_request():
+    if request.method == 'OPTIONS':
+        response = app.response_class()
+        response.headers.add('Access-Control-Allow-Origin', '*')
+        response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+        response.headers.add('Access-Control-Allow-Methods', 'POST')
+        return response
     data = request.get_json()
     if data.get("value") == "two":
         return jsonify({"page": page1})
