@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, render_template, redirect
+from flask import Flask, jsonify, request, render_template, redirect, url_for
 from flask_cors import CORS
 
 app = Flask(__name__)
@@ -33,7 +33,7 @@ page2 = '''
 
 @app.route('/')
 def index():
-    return app.send_static_file('script.js')
+    return redirect(url_for('static', filename='magic.js'))
 
 @app.route('/api', methods=["GET"])
 def get_request():
